@@ -5,11 +5,11 @@ const addressSelector = (state) => state.people.peopleaddres
 
 
 
-// const statusState = (state) => !state.people.status
+const statusState = (state) => state.people.status
 
 
 export {
     listSelectors,
     addressSelector,
-    // statusState
+    statusState
 }

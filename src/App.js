@@ -35,8 +35,8 @@ function App() {
   // console.log(list); // undefined ?
   const adres = useSelector(PeopleSelectors.addressSelector)
   // console.log(adres);
-  const [status, setStatus] = useState(true);
-  // const status = useSelector(PeopleSelectors.statusState())
+
+  const status = useSelector(PeopleSelectors.statusState)
 
   useEffect(() => {
     publicAPI.get('/users').then((res) => {
@@ -55,7 +55,7 @@ function App() {
         }
       }).then((res) => {
         dispatch(PeopleAction.setPeopleAddress(res.data));
-        setStatus(false);
+        dispatch(PeopleAction.changeStatus(false))
       }).catch((error) => {
         console.log('Erorr', error);
       })
