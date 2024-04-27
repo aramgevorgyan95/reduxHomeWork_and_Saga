@@ -1,12 +1,15 @@
-const listSelectors = (state) => {
-    return state.people.listPeople
-}
+const listSelectors = (state) =>  state.people.listPeople
 
-const addressSelector = (state) => {
-    return state.people.peopleaddres
-}
+
+const addressSelector = (state) => state.people.peopleaddres
+
+
+
+// const statusState = (state) => !state.people.status
+
 
 export {
     listSelectors,
-    addressSelector
+    addressSelector,
+    // statusState
 }

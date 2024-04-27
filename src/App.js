@@ -1,3 +1,4 @@
+// REDUX I HAMAR --------------------------------------------------------------------------
 import './App.css';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -5,7 +6,7 @@ import { PeopleAction } from './store/actions';
 import { PeopleSelectors } from './store/selectors';
 import publicAPI from './services/api/publicAPI';
 
-
+//SAGA------------------------------------------------
 function Timer (){
   const [u, setU] = useState('Hello')
   useEffect(()=> {
@@ -15,8 +16,9 @@ function Timer (){
   },[])
   return <h1>Timer :{u}</h1>
 }
-
+// -----------------------------------------
 function App() {
+  //SAGA---------------------------------------------
   const [b, setB] = useState(true);
 
   useEffect(()=> {
@@ -24,17 +26,17 @@ function App() {
       setB(false)
     },2500)
   },[])
-  const dispatch = useDispatch();
+// ------------------------------------------
 
+
+  //REDUX  I HAMAR -----------------------------------------------------------------
+  const dispatch = useDispatch();
   const list = useSelector(PeopleSelectors.listSelectors)
   // console.log(list); // undefined ?
-
   const adres = useSelector(PeopleSelectors.addressSelector)
-
   // console.log(adres);
-
   const [status, setStatus] = useState(true);
-
+  // const status = useSelector(PeopleSelectors.statusState())
 
   useEffect(() => {
     publicAPI.get('/users').then((res) => {
@@ -52,7 +54,7 @@ function App() {
           id: id
         }
       }).then((res) => {
-        dispatch(PeopleAction.setPeopleAddress(res.data))
+        dispatch(PeopleAction.setPeopleAddress(res.data));
         setStatus(false);
       }).catch((error) => {
         console.log('Erorr', error);
@@ -87,10 +89,13 @@ function App() {
 
   return (
     <>
+    {/* REDUXI HAMAR E  */}
       <div>
         {context}
       </div>
       <div>
+
+      {/* SAGA */}
         {b && <Timer />}
       </div>
     </>

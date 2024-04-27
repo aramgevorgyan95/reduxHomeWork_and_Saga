@@ -14,7 +14,15 @@ function setPeopleAddress (address) {
     }
 }
 
+// function changeStatus (status){
+//     return {
+//         type: PeopleType.TOGGLE_STATUS,
+//         payload: status
+//     }
+// }
+
 export {
     getPeoples,
-    setPeopleAddress
+    setPeopleAddress,
+    // changeStatus
 }
