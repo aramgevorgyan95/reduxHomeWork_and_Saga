@@ -1,0 +1,7 @@
+const GET_PEOPLES_LIST = 'peopleTypes@GET_PEOPLE';
+const SET_PEOPLE_ADDRESS = 'peopleTypes@SET_PEOPLE_ADDRESS';
+
+export {
+    GET_PEOPLES_LIST,
+    SET_PEOPLE_ADDRESS
+}
