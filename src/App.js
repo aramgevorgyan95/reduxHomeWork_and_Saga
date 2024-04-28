@@ -35,13 +35,11 @@ function App() {
   // console.log(list); // undefined ?
   const adres = useSelector(PeopleSelectors.addressSelector)
   // console.log(adres);
-
   const status = useSelector(PeopleSelectors.statusState)
 
   useEffect(() => {
     publicAPI.get('/users').then((res) => {
       dispatch(PeopleAction.getPeoples(res.data));
-      // console.log(dispatch(PeopleAction.getPeoples(res.data)));
     }).catch((error) => {
       console.log('Erorr', error);
     })
@@ -84,7 +82,7 @@ function App() {
         })}
       </div>
     }
-  }, [status, adres, list]);
+  }, [status, adres, list, dispatch]);
 
 
   return (
