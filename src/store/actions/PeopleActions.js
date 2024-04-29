@@ -1,13 +1,24 @@
 import { PeopleType } from "../types";
 
-function getPeoples (list) {
+function getPeopleListAction () {
     return {
         type: PeopleType.GET_PEOPLES_LIST,
-        payload: list
+    }
+}
+function setPeopleListAction (list) {
+    return {
+        type: PeopleType.SET_PEOPLES_LIST,
+        payload:list
     }
 }
 
-function setPeopleAddress (address) {
+function getPeopleAddressAction (id) {
+    return {
+        type: PeopleType.GET_PEOPLE_ADDRESS,
+        payload: id
+    }
+}
+function setPeopleAddressAction (address) {
     return {
         type: PeopleType.SET_PEOPLE_ADDRESS,
         payload: address
@@ -22,7 +33,9 @@ function changeStatus (status){
 }
 
 export {
-    getPeoples,
-    setPeopleAddress,
+    getPeopleListAction,
+    setPeopleListAction,
+    getPeopleAddressAction,
+    setPeopleAddressAction,
     changeStatus
 }

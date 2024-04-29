@@ -9,7 +9,7 @@ const LIST = {
 export default function (state = LIST, action) {
     const { type, payload } = action
     switch (type) {
-        case PeopleType.GET_PEOPLES_LIST:
+        case PeopleType.SET_PEOPLES_LIST:
             return { ...state, listPeople: payload }
         case PeopleType.SET_PEOPLE_ADDRESS:
             return { ...state, peopleaddres: payload }
